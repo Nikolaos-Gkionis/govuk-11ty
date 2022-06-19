@@ -2,7 +2,7 @@
 layout: side-navigation
 order: 3
 title: Histories
-description: The plugin offers a number of layouts to match the type of content you want write.
+description: A design history of Phase 5 Discovery and Alpha. It features posts that describe the development of new features, iterations of existing ones.
 tags:
   - homepage
 ---

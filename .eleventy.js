@@ -24,9 +24,9 @@ module.exports = function (eleventyConfig) {
     pathPrefix,
     url,
     header: {
-      organisationLogo: 'x-govuk',
-      organisationName: 'X-GOVUK',
-      productName: 'Eleventy Plugin',
+      organisationLogo: 'crown',
+      organisationName: 'NCTS',
+      productName: 'Design history',
       search: {
         indexPath: '/search.json',
         sitemapPath: '/sitemap'

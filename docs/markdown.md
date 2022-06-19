@@ -1,8 +1,8 @@
 ---
 layout: side-navigation
 order: 5
-title: Markdown
-description: A lightweight markup language that allows you to add formatting to plain text text documents.
+title: Users and Business
+description: A repository of user research findings. Usability test videos and Business Analysis models that meet our user needs.
 related:
   sections:
     - items:

@@ -1,7 +1,7 @@
 {
   "name": "govuk-eleventy-plugin",
-  "version": "2.4.0",
-  "description": "Write documentation using Markdown and publish it using GOV.UK styles",
+  "version": "2.2.0",
+  "description": "A Design history for the Phase 5 of the New Computerised Trading System (NCTS)",
   "keywords": [
     "govuk",
     "government",
@@ -14,8 +14,8 @@
   },
   "contributors": [
     {
-      "name": "Paul Robert Lloyd",
-      "url": "https://paulrobertlloyd.com"
+      "name": "Nikolaos Gkionis",
+      "url": "https://nikolaos-gkionis.herokuapp.com"
     }
   ],
   "license": "MIT",
@@ -28,7 +28,7 @@
   "sass": "lib/govuk.scss",
   "repository": {
     "type": "git",
-    "url": "https://github.com/x-govuk/govuk-eleventy-plugin.git"
+    "url": "ctc-trader-p5-prototype.herokuapp.com/"
   },
   "scripts": {
     "prebuild": "rimraf public",
