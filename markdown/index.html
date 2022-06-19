@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Markdown - Eleventy Plugin - X-GOVUK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c"> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-favicon.ico" type="image/x-icon">
+  <link rel="mask-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true" color="#0b0c0c">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png">
+
+  <link rel="stylesheet" href="https://x-govuk.github.io/govuk-eleventy-plugin/assets/govuk.css">
+
+  <meta property="og:url" content="https://x-govuk.github.io/govuk-eleventy-plugin/">
+  <meta property="og:title" content="Markdown">
+<meta property="og:description" name="description" content="A lightweight markup language that allows you to add formatting to plain text text documents.">    
+    
+    <meta property="og:image" content="https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png">
+  </head>
+  <body class="govuk-template__body ">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/govuk-eleventy-plugin/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+<svg class="app-header__logotype--large" aria-hidden="true" focusable="false" height="35" width="35" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M180 251v1c-17 7-26 12-26 16s19 6 19-5c4 18-11 21-20 13 4 7 6 18-4 23-11-5-9-16-5-23-10 8-24 4-20-12v-1c0 11 18 9 19 5 0-4-9-9-26-16v-1c11 3 21 4 32 4 10 0 20-1 31-4Zm61-52 1 1c-6 18-8 29-5 34 6-6 11-14 11-24l19 9c-11 5-20 10-27 17 5 2 15-1 21-4l-32 32c3-6 6-16 4-21-7 6-12 16-16 27l-10-19c11 0 18-5 24-11-5-3-16-2-34 5v-1c10-6 18-12 25-19 8-8 14-15 19-26Zm-186 0c6 10 12 18 20 25 7 8 15 14 25 20h-1c-17-6-29-7-33-4 6 5 13 11 24 11l-10 19c-4-12-10-21-16-28-2 5 1 16 3 21l-31-31c5 2 16 5 21 3-7-6-16-12-28-16l19-10c0 11 6 18 11 24 3-5 2-16-4-33Zm152-5a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm-115 0a15 15 0 0 1 11 25 15 15 0 0 1-25-10 15 15 0 0 1 14-15Zm88-27a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm-63 0a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm133-48c7 17 12 26 16 26s6-19-5-19c18-4 21 11 13 20 7-4 18-6 23 5-5 10-16 8-23 4 8 9 5 24-13 20 11 0 9-19 5-19s-9 9-16 26h-1c3-11 4-21 4-31 0-11-1-21-4-32h1Zm-202 0c-3 11-4 21-4 32 0 10 1 20 4 31h-1c-7-17-12-26-15-26-5 0-7 19 4 19-18 4-21-11-13-20-7 4-18 6-23-4 5-11 16-9 23-5-8-9-5-24 13-20-11 0-9 19-4 19 3 0 8-9 15-26Zm101 11a20 20 0 1 1-1 41 20 20 0 0 1 1-41Zm-32-26a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm63 0a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15ZM92 80a15 15 0 0 1 11 25 15 15 0 0 1-25-11 15 15 0 0 1 14-14Zm115 0a15 15 0 0 1 10 25 15 15 0 0 1-25-11 15 15 0 0 1 15-14ZM80 32l9 19c-10 0-18 5-24 11 5 3 16 1 34-5l1 1c-11 5-18 11-26 19-7 7-13 15-19 25h-1c7-18 8-29 5-34-6 6-11 13-11 24L29 82c11-4 21-9 27-16-5-2-15 1-21 4l32-32c-3 6-6 16-4 21 7-7 12-16 17-27Zm137-1c4 12 10 21 16 28 2-5-1-16-3-21l31 31c-5-2-16-5-21-3 7 6 16 12 28 16l-19 10c0-11-6-18-11-24-3 4-2 16 4 33v1c-6-10-12-18-20-25-7-8-15-14-25-20h1c17 6 28 7 33 4-6-5-13-11-24-11l10-19ZM149 2c10 5 8 16 4 23 9-8 24-5 20 13 0-11-19-9-19-4 0 3 9 8 26 15v1c-11-3-21-4-31-4-11 0-21 1-32 4v-1c17-7 26-12 26-15 0-5-19-7-19 4-4-17 10-21 20-13-4-7-6-18 5-23Z"/>
+</svg>
+          <span class="govuk-header__logotype-text">
+            X-GOVUK
+          </span>
+        </span>
+        <span class="govuk-header__product-name">
+          Eleventy Plugin
+        </span>
+      </a>
+    </div>
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="/govuk-eleventy-plugin/search.json">
+  <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
+  <a class="app-site-search__link govuk-link-no-visited" href="/govuk-eleventy-plugin/sitemap">Sitemap</a>
+</div>
+
+  </div>
+</header>
+
+
+      <div class="govuk-width-container ">
+  <div class="govuk-breadcrumbs govuk-!-display-none-print">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://x-govuk.github.io/#shared-projects">X-GOVUK shared projects</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/govuk-eleventy-plugin/">GOV.UK Eleventy Plugin</a>
+    </li>
+  </ol>
+</div>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
+      <nav class="x-govuk-side-navigation" aria-labelledby="x-govuk-side-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
+    <ul class="x-govuk-side-navigation__section">
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/get-started/">Get started</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/page/">Page</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/options/">Options</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/side-navigation/">Page with side navigation</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/post/">Post</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/layouts/">Histories</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/search/">Adding a site search</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/collection/">Collection</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
+          <a class="x-govuk-side-navigation__link" href="" aria-current="true">Markdown</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/product/">Product page</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/markdown-advanced/">Advanced Markdown</a>
+        </li>
+    </ul>
+</nav>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Markdown
+  </h1>
+    <p class="app-document-header__description govuk-body-l">
+      A lightweight markup language that allows you to add formatting to plain text text documents.
+    </p>
+</header>
+
+
+
+      <div class="app-prose-scope"><p class="govuk-body"><nav class="app-contents-list" aria-label="Contents" role="navigation">
+    <h2 class="app-contents-list__title">Contents</h2>
+<ul><li><a href="#headings">Headings</a></li><li><a href="#paragraphs">Paragraphs</a></li><li><a href="#line-breaks">Line breaks</a></li><li><a href="#emphasis">Emphasis</a></li><li><a href="#strong-emphasis">Strong emphasis</a></li><li><a href="#blockquotes">Blockquotes</a><ul><li><a href="#blockquotes-with-multiple-paragraphs">Blockquotes with multiple paragraphs</a></li><li><a href="#nested-blockquotes">Nested blockquotes</a></li><li><a href="#blockquotes-with-other-elements">Blockquotes with other elements</a></li></ul></li><li><a href="#lists">Lists</a><ul><li><a href="#ordered-lists">Ordered lists</a></li><li><a href="#unordered-lists">Unordered lists</a></li></ul></li><li><a href="#code">Code</a><ul><li><a href="#code-spans">Code spans</a></li><li><a href="#code-blocks">Code blocks</a></li></ul></li><li><a href="#horizontal-rules">Horizontal rules</a></li><li><a href="#links">Links</a><ul><li><a href="#urls-and-email-addresses">URLs and email addresses</a></li><li><a href="#formatting-links">Formatting links</a></li></ul></li><li><a href="#images">Images</a><ul><li><a href="#linking-images">Linking images</a></li></ul></li><li><a href="#typographic-replacements">Typographic replacements</a></li></ul></nav></p>
+<h2 id="headings" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#headings" class="govuk-link"><span>Headings</span></a></h2>
+<p class="govuk-body">To create a heading, add number signs (<code class="x-govuk-code x-govuk-code--inline">#</code>) in front of a word or phrase.</p>
+<p class="govuk-body">The number of number signs you use should correspond to the heading level. For example, to create a heading level 3 (<code class="x-govuk-code x-govuk-code--inline">&lt;h3&gt;</code>), use 3 number signs (e.g., <code class="x-govuk-code x-govuk-code--inline">### My Header</code>).</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Markdown</th>
+<th class="govuk-table__header">Rendered output</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline"># Heading level 1</code></td>
+<td class="govuk-table__cell"><h1 class="govuk-heading-l">Heading level 1</h1></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">## Heading level 2</code></td>
+<td class="govuk-table__cell"><h2 class="govuk-heading-m">Heading level 2</h2></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">### Heading level 3</code></td>
+<td class="govuk-table__cell"><h3 class="govuk-heading-s">Heading level 3</h3></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">#### Heading level 4</code></td>
+<td class="govuk-table__cell"><h4 class="govuk-heading-s">Heading level 4</h4></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">##### Heading level 5</code></td>
+<td class="govuk-table__cell"><h5 class="govuk-heading-s">Heading level 5</h5></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">###### Heading level 6</code></td>
+<td class="govuk-table__cell"><h6 class="govuk-heading-s">Heading level 6</h6></td>
+</tr>
+</tbody>
+</table>
+<h2 id="paragraphs" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#paragraphs" class="govuk-link"><span>Paragraphs</span></a></h2>
+<p class="govuk-body">To create paragraphs, use a blank line to separate one or more lines of text.</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Markdown</th>
+<th class="govuk-table__header">Rendered output</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0">This is the first paragraph.<br><br>And this is the second one.</pre></td>
+<td class="govuk-table__cell"><p class="govuk-body">This is the first paragraph.</p><p class="govuk-body">And this is the second one.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="line-breaks" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#line-breaks" class="govuk-link"><span>Line breaks</span></a></h2>
+<p class="govuk-body">To create a line break or new line (<code class="x-govuk-code x-govuk-code--inline">&lt;br&gt;</code>), end a line with 2 or more spaces, and then type return.</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Markdown</th>
+<th class="govuk-table__header">Rendered output</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><pre class="x-govuk-code x-govuk-code--block govuk-!-margin-0" tabindex="0">This is the first line.<br>And this is the second one.</pre></td>
+<td class="govuk-table__cell"><p class="govuk-body">This is the first line.<br>And this is the second one.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="emphasis" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#emphasis" class="govuk-link"><span>Emphasis</span></a></h2>
+<p class="govuk-body">To emphasise text, add one asterisk or underscore before and after a word or phrase.</p>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<p class="govuk-body">The <a href="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#italics" class="govuk-link">GDS Style Guide recommends against the use of italics</a>, and the GDS Transport font doesn’t provide an italic style. Use ‘single quotation marks’ if referring to a document, scheme or initiative.</p>
+</blockquote>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Markdown</th>
+<th class="govuk-table__header">Rendered output</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">This text is *emphasised*.</code></td>
+<td class="govuk-table__cell"><p class="govuk-body">This text is <em>emphasised</em>.</p></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">This text is _emphasised_.</code></td>
+<td class="govuk-table__cell"><p class="govuk-body">This text is <em>emphasised</em>.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="strong-emphasis" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#strong-emphasis" class="govuk-link"><span>Strong emphasis</span></a></h2>
+<p class="govuk-body">To bold text, add 2 asterisks or underscores before and after a word or phrase.</p>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<p class="govuk-body">The <a href="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#bold" class="govuk-link">GDS Style Guide recommends only using emboldened text when referring to text from interfaces</a> in technical documentation or instructions.</p>
+</blockquote>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Markdown</th>
+<th class="govuk-table__header">Rendered output</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">This text is **strongly emphasised**.</code></td>
+<td class="govuk-table__cell"><p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p></td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">This text is __strongly emphasised__.</code></td>
+<td class="govuk-table__cell"><p class="govuk-body">This text is <strong>strongly emphasised</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="blockquotes" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#blockquotes" class="govuk-link"><span>Blockquotes</span></a></h2>
+<p class="govuk-body">To create a blockquote, add a <code class="x-govuk-code x-govuk-code--inline">&gt;</code> in front of a paragraph.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__quote">&gt; Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.</span>
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<p class="govuk-body">Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.</p>
+</blockquote>
+<h3 id="blockquotes-with-multiple-paragraphs" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#blockquotes-with-multiple-paragraphs" class="govuk-link"><span>Blockquotes with multiple paragraphs</span></a></h3>
+<p class="govuk-body">Blockquotes can contain multiple paragraphs. Add a <code class="x-govuk-code x-govuk-code--inline">&gt;</code> on the blank lines between the paragraphs.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__quote">&gt; Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.</span>
+<span class="x-govuk-code__quote">&gt;
+&gt; Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.</span>
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<p class="govuk-body">Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.</p>
+<p class="govuk-body">Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.</p>
+</blockquote>
+<h3 id="nested-blockquotes" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#nested-blockquotes" class="govuk-link"><span>Nested blockquotes</span></a></h3>
+<p class="govuk-body">Blockquotes can be nested. Add a <code class="x-govuk-code x-govuk-code--inline">&gt;&gt;</code> in front of the paragraph you want to nest.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__quote">&gt; Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.</span>
+<span class="x-govuk-code__quote">&gt;
+&gt; &gt; Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.</span>
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<p class="govuk-body">Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise.</p>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<p class="govuk-body">Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.</p>
+</blockquote>
+</blockquote>
+<h3 id="blockquotes-with-other-elements" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#blockquotes-with-other-elements" class="govuk-link"><span>Blockquotes with other elements</span></a></h3>
+<p class="govuk-body">Blockquotes can contain other Markdown formatted elements. Not all elements can be used — you’ll need to experiment to see which ones work.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__quote">&gt; #### Check the MOT status of a vehicle</span>
+<span class="x-govuk-code__quote">&gt;
+&gt; If your vehicle is new, you must [<span class="x-govuk-code__string">get an MOT test</span>](<span class="x-govuk-code__link">https://www.gov.uk/getting-an-mot</span>) by the third anniversary of its registration.</span>
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<h4 id="check-the-mot-status-of-a-vehicle" tabindex="-1" class="govuk-heading-s"><a class="app-heading-anchor" href="#check-the-mot-status-of-a-vehicle" class="govuk-link"><span>Check the MOT status of a vehicle</span></a></h4>
+<p class="govuk-body">If your vehicle is new, you must <a href="https://www.gov.uk/getting-an-mot" class="govuk-link">get an MOT test</a> by the third anniversary of its registration.</p>
+</blockquote>
+<h2 id="lists" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#lists" class="govuk-link"><span>Lists</span></a></h2>
+<p class="govuk-body">You can organize items into ordered and unordered lists.</p>
+<h3 id="ordered-lists" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#ordered-lists" class="govuk-link"><span>Ordered lists</span></a></h3>
+<p class="govuk-body">To create an ordered list, add line items with numbers followed by periods. The numbers don’t have to be in numerical order, but the list should start with the number one.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__bullet">1.</span> First item
+<span class="x-govuk-code__bullet">2.</span> Second item
+<span class="x-govuk-code__bullet">   1.</span> Indented item
+<span class="x-govuk-code__bullet">   1.</span> Indented item
+<span class="x-govuk-code__bullet">3.</span> Third item
+</code></pre>
+
+<ol class="govuk-list govuk-list--number">
+<li>First item</li>
+<li>Second item
+<ol class="govuk-list govuk-list--number">
+<li>Indented item</li>
+<li>Indented item</li>
+</ol>
+</li>
+<li>Third item</li>
+</ol>
+<h3 id="unordered-lists" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#unordered-lists" class="govuk-link"><span>Unordered lists</span></a></h3>
+<p class="govuk-body">To create an unordered list, add dashes (<code class="x-govuk-code x-govuk-code--inline">-</code>), asterisks (<code class="x-govuk-code x-govuk-code--inline">*</code>), or plus signs (<code class="x-govuk-code x-govuk-code--inline">+</code>) in front of line items. Indent one or more items to create a nested list.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__bullet">-</span> First item
+<span class="x-govuk-code__bullet">-</span> Second item
+<span class="x-govuk-code__bullet">  -</span> Indented item
+<span class="x-govuk-code__bullet">  -</span> Indented item
+<span class="x-govuk-code__bullet">-</span> Third item
+</code></pre>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>First item</li>
+<li>Second item
+<ul class="govuk-list govuk-list--bullet">
+<li>Indented item</li>
+<li>Indented item</li>
+</ul>
+</li>
+<li>Third item</li>
+</ul>
+<h4 id="nesting-different-list-types" tabindex="-1" class="govuk-heading-s"><a class="app-heading-anchor" href="#nesting-different-list-types" class="govuk-link"><span>Nesting different list types</span></a></h4>
+<p class="govuk-body">You can also nest an unordered list in an ordered list, or vice versa.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__bullet">1.</span> First item
+<span class="x-govuk-code__bullet">2.</span> Second item
+<span class="x-govuk-code__bullet">   -</span> Indented item
+<span class="x-govuk-code__bullet">   -</span> Indented item
+<span class="x-govuk-code__bullet">3.</span> Third item
+</code></pre>
+
+<ol class="govuk-list govuk-list--number">
+<li>First item</li>
+<li>Second item
+<ul class="govuk-list govuk-list--bullet">
+<li>Indented item</li>
+<li>Indented item</li>
+</ul>
+</li>
+<li>Third item</li>
+</ol>
+<h4 id="starting-unordered-list-items-with-numbers" tabindex="-1" class="govuk-heading-s"><a class="app-heading-anchor" href="#starting-unordered-list-items-with-numbers" class="govuk-link"><span>Starting unordered list items with numbers</span></a></h4>
+<p class="govuk-body">If you need to start an unordered list item with a number followed by a period, you can use a backslash (<code class="x-govuk-code x-govuk-code--inline">\</code>) to escape the period.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__bullet">-</span> 2012\. A great year!
+<span class="x-govuk-code__bullet">-</span> I think 2009 was second best.
+</code></pre>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>2012. A great year!</li>
+<li>I think 2009 was second best.</li>
+</ul>
+<h2 id="code" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#code" class="govuk-link"><span>Code</span></a></h2>
+<h3 id="code-spans" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#code-spans" class="govuk-link"><span>Code spans</span></a></h3>
+<p class="govuk-body">To denote a word or phrase as code, enclose it in backticks (<code class="x-govuk-code x-govuk-code--inline">`</code>).</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>At the command prompt, type <span class="x-govuk-code__code">`npm install`</span>.
+</code></pre>
+
+<p class="govuk-body">At the command prompt, type <code class="x-govuk-code x-govuk-code--inline">npm install</code>.</p>
+<h3 id="code-blocks" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#code-blocks" class="govuk-link"><span>Code blocks</span></a></h3>
+<p class="govuk-body">To create code blocks, indent every line of the block by at least 4 spaces or one tab.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__code">    console.log(&#x27;Hello, world!&#x27;)
+</span></code></pre>
+
+<pre class="govuk-inset-text govuk-!-margin-left-0"><code>console.log('Hello, world!')
+</code></pre>
+<p class="govuk-body">To use syntax highlighting, used <a href="../markdown-advanced/#fenced-code" class="govuk-link">fenced code blocks</a>.</p>
+<h2 id="horizontal-rules" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#horizontal-rules" class="govuk-link"><span>Horizontal rules</span></a></h2>
+<p class="govuk-body">To create a horizontal rule, use 3 or more asterisks (<code class="x-govuk-code x-govuk-code--inline">***</code>), dashes (<code class="x-govuk-code x-govuk-code--inline">---</code>), or underscores (<code class="x-govuk-code x-govuk-code--inline">___</code>) on a line by themselves.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__section">---</span>
+---
+
+---
+</code></pre>
+
+<p class="govuk-body">The rendered output of all 3 looks identical:</p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 id="links" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#links" class="govuk-link"><span>Links</span></a></h2>
+<p class="govuk-body">To create a link, enclose the link text in brackets (e.g., <code class="x-govuk-code x-govuk-code--inline">[GOV.UK]</code>) and then follow it immediately with the URL in parentheses (e.g., <code class="x-govuk-code x-govuk-code--inline">(https://www.gov.uk)</code>).</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>Visit [<span class="x-govuk-code__string">GOV.UK</span>](<span class="x-govuk-code__link">https://www.gov.uk</span>).
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body">Visit <a href="https://www.gov.uk" class="govuk-link">GOV.UK</a>.</p>
+<h3 id="urls-and-email-addresses" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#urls-and-email-addresses" class="govuk-link"><span>URLs and email addresses</span></a></h3>
+<p class="govuk-body">To quickly turn a URL or email address into a link, enclose it in angle brackets.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="language-xml">&lt;https://www.gov.uk&gt;</span>  
+<span class="language-xml">&lt;mailbox@example.org&gt;</span>
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body"><a href="https://www.gov.uk" class="govuk-link">https://www.gov.uk</a><br>
+<a href="mailto:mailbox@example.org" class="govuk-link">mailbox@example.org</a></p>
+<h3 id="formatting-links" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#formatting-links" class="govuk-link"><span>Formatting links</span></a></h3>
+<p class="govuk-body">To <a href="../markdown#emphasis" class="govuk-link">emphasize</a> links, add asterisks before and after the brackets and parentheses. To denote links as <a href="../markdown#code" class="govuk-link">code</a>, add backticks in the brackets.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>Visit the <span class="x-govuk-code__strong">**[<span class="x-govuk-code__string">Markdown Guide</span>](<span class="x-govuk-code__link">https://www.markdownguide.org</span>)**</span>.  
+See the section on [<span class="x-govuk-code__string">`code`</span>](<span class="x-govuk-code__link">../markdown#code</span>).
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body">Visit the <strong><a href="https://www.markdownguide.org" class="govuk-link">Markdown Guide</a></strong>.<br>
+See the section on <a href="../markdown#code" class="govuk-link"><code class="x-govuk-code x-govuk-code--inline">code</code></a>.</p>
+<h2 id="images" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#images" class="govuk-link"><span>Images</span></a></h2>
+<p class="govuk-body">To add an image, add an exclamation mark (<code class="x-govuk-code x-govuk-code--inline">!</code>), followed by alternative text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a caption in quotation marks after the path or URL.</p>
+<p class="govuk-body">The rendered output looks like this:</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>![<span class="x-govuk-code__string">A crown icon above the words GOV.UK</span>](<span class="x-govuk-code__link">/assets/images/govuk-opengraph-image.png &quot;The GOV.UK logo&quot;</span>)
+</code></pre>
+
+<figure><img src="/assets/images/govuk-opengraph-image.png" alt="A crown icon above the words GOV.UK"><figcaption>The GOV.UK logo</figcaption></figure>
+<h3 id="linking-images" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#linking-images" class="govuk-link"><span>Linking images</span></a></h3>
+<p class="govuk-body">To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>[<span class="x-govuk-code__string">![A crown icon above the words GOV.UK</span>](<span class="x-govuk-code__link">/assets/images/govuk-apple-touch-icon-180x180.png &quot;Visit GOV.UK&quot;</span>)](<span class="x-govuk-code__link">https://www.gov.uk</span>)
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<figure><a href="https://www.gov.uk" class="govuk-link"><img src="/assets/images/govuk-apple-touch-icon-180x180.png" alt="A crown icon above the words GOV.UK"></a><figcaption>Visit GOV.UK</figcaption></figure>
+<h2 id="typographic-replacements" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#typographic-replacements" class="govuk-link"><span>Typographic replacements</span></a></h2>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Description</th>
+<th class="govuk-table__header">Text</th>
+<th class="govuk-table__header">Rendered output</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">En dash</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">--</code></td>
+<td class="govuk-table__cell">–</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Em dash</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">---</code></td>
+<td class="govuk-table__cell">—</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Ellipsis</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">...</code></td>
+<td class="govuk-table__cell">…</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Single quotes</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">'single'</code></td>
+<td class="govuk-table__cell">‘single’</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Double quotes</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">&quot;double&quot;</code></td>
+<td class="govuk-table__cell">“double”</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Simple fractions</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">1/2 1/3 2/3 1/4 3/4</code></td>
+<td class="govuk-table__cell">½ ⅓ ⅔ ¼ ¾</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Multiplication</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">2 x 3</code></td>
+<td class="govuk-table__cell">2 × 3</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Greater than</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">2 =&gt; 1</code></td>
+<td class="govuk-table__cell">2 ≥ 1</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Less than</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">1 &lt;= 2</code></td>
+<td class="govuk-table__cell">1 ≤ 2</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Plus-minus</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">2.4 +-1</code></td>
+<td class="govuk-table__cell">2.4 ±1</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Guillemets</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">&lt;&lt;Bonjour!&gt;&gt;</code></td>
+<td class="govuk-table__cell">«Bonjour!»</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Copyright</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">(C)</code> <code class="x-govuk-code x-govuk-code--inline">(c)</code></td>
+<td class="govuk-table__cell">©</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Registered trademark</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">(R)</code> <code class="x-govuk-code x-govuk-code--inline">(r)</code></td>
+<td class="govuk-table__cell">®</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Trademark</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">(TM)</code> <code class="x-govuk-code x-govuk-code--inline">(tm)</code></td>
+<td class="govuk-table__cell">™</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Section</td>
+<td class="govuk-table__cell"><code class="x-govuk-code x-govuk-code--inline">(P)</code> <code class="x-govuk-code x-govuk-code--inline">(p)</code></td>
+<td class="govuk-table__cell">(P)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="x-govuk-related-navigation">
+    <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-nav-related-content">
+      <h2 class="x-govuk-related-navigation__main-heading" id="related-nav-related_items-related-content">
+        Related content
+      </h2>
+        <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.markdownguide.org">Markdown Guide</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+    </div>
+  </div>
+        </main>
+      </div>
+
+  <footer class="govuk-footer app-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://www.11ty.dev" target="_blank">
+                    Documentation for Eleventy (opens in a new tab)
+                  </a>
+                </li>
+            </ul>
+          <span class="govuk-footer__licence-description">
+            Licensed under the <a href="https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt" class="govuk-footer__link">MIT Licence</a>, except where otherwise stated
+          </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        © X-GOVUK
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/govuk-eleventy-plugin/assets/govuk.js"></script>
+  <script>document.documentElement.classList.remove('no-js')</script>
+  </body>
+</html>

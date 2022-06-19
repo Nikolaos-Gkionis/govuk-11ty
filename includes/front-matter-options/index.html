@@ -1,0 +1,149 @@
+<p class="govuk-body">Use these options to customise the appearance, content and behaviour of any layout.</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th style="text-align:left" class="govuk-table__header">Name</th>
+<th style="text-align:left" class="govuk-table__header">Type</th>
+<th style="text-align:left" class="govuk-table__header">Description</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>layout</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Page layout.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>includeInBreadcrumbs</strong></td>
+<td style="text-align:left" class="govuk-table__cell">boolean</td>
+<td style="text-align:left" class="govuk-table__cell">Include page as the last item in any breadcrumbs. Default is <code class="x-govuk-code x-govuk-code--inline">false</code>.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>order</strong></td>
+<td style="text-align:left" class="govuk-table__cell">number</td>
+<td style="text-align:left" class="govuk-table__cell">Ranking of page in navigation. Lower numbers appear before pages with a higher number.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>title</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Page title.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>description</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Page description.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>ogImage</strong></td>
+<td style="text-align:left" class="govuk-table__cell">object</td>
+<td style="text-align:left" class="govuk-table__cell">Open Graph image that appears on social media networks.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>ogImage.src</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Path to Open Graph image. Can be a relative or absolute URL.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>ogImage.alt</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Alternative text for Open Graph image.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>aside</strong></td>
+<td style="text-align:left" class="govuk-table__cell">object</td>
+<td style="text-align:left" class="govuk-table__cell">Small portion of content that is indirectly related to the main content.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>aside.title</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Title for aside.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>aside.content</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Content for aside. Accepts Markdown.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>related</strong></td>
+<td style="text-align:left" class="govuk-table__cell">object</td>
+<td style="text-align:left" class="govuk-table__cell">Related links. See <a href="#options-for-related" class="govuk-link">related</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="options-for-related" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#options-for-related" class="govuk-link"><span>Options for related</span></a></h3>
+<p class="govuk-body">With one section:</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th style="text-align:left" class="govuk-table__header">Name</th>
+<th style="text-align:left" class="govuk-table__header">Type</th>
+<th style="text-align:left" class="govuk-table__header">Description</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>title</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Title for group of related links. Default is <code class="x-govuk-code x-govuk-code--inline">'Related content'</code>.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>items</strong></td>
+<td style="text-align:left" class="govuk-table__cell">array</td>
+<td style="text-align:left" class="govuk-table__cell">See <a href="#options-for-items" class="govuk-link">items</a>.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>subsections</strong></td>
+<td style="text-align:left" class="govuk-table__cell">array</td>
+<td style="text-align:left" class="govuk-table__cell">Title for sub-group of related links.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>subsections.title</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell"></td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>subsections.items</strong></td>
+<td style="text-align:left" class="govuk-table__cell">array</td>
+<td style="text-align:left" class="govuk-table__cell">See <a href="#options-for-items" class="govuk-link">items</a>.</td>
+</tr>
+</tbody>
+</table>
+<p class="govuk-body">With multiple sections:</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th style="text-align:left" class="govuk-table__header">Name</th>
+<th style="text-align:left" class="govuk-table__header">Type</th>
+<th style="text-align:left" class="govuk-table__header">Description</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>sections</strong></td>
+<td style="text-align:left" class="govuk-table__cell">array</td>
+<td style="text-align:left" class="govuk-table__cell">See <a href="#options-for-related" class="govuk-link">items</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="options-for-items" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#options-for-items" class="govuk-link"><span>Options for items</span></a></h3>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th style="text-align:left" class="govuk-table__header">Name</th>
+<th style="text-align:left" class="govuk-table__header">Type</th>
+<th style="text-align:left" class="govuk-table__header">Description</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>text</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Title of related content.</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell"><strong>href</strong></td>
+<td style="text-align:left" class="govuk-table__cell">string</td>
+<td style="text-align:left" class="govuk-table__cell">Link for the related content.</td>
+</tr>
+</tbody>
+</table>

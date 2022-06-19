@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Advanced Markdown - Eleventy Plugin - X-GOVUK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c"> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-favicon.ico" type="image/x-icon">
+  <link rel="mask-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-mask-icon.svg?raw=true" color="#0b0c0c">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/x-govuk/logo/main/images/x-govuk-apple-touch-icon.png">
+
+  <link rel="stylesheet" href="https://x-govuk.github.io/govuk-eleventy-plugin/assets/govuk.css">
+
+  <meta property="og:url" content="https://x-govuk.github.io/govuk-eleventy-plugin/">
+  <meta property="og:title" content="Advanced Markdown">
+<meta property="og:description" name="description" content="Additional Markdown syntax is supported to ensure pages can contain additional elements like tables, code blocks and footnotes.">    
+    
+    <meta property="og:image" content="https://x-govuk.github.io/govuk-eleventy-plugin/assets/opengraph-image.png">
+  </head>
+  <body class="govuk-template__body ">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+      <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+  <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container app-header__container">
+    <div class="govuk-header__logo app-header__logo">
+      <a href="/govuk-eleventy-plugin/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+<svg class="app-header__logotype--large" aria-hidden="true" focusable="false" height="35" width="35" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <path fill="currentColor" d="M180 251v1c-17 7-26 12-26 16s19 6 19-5c4 18-11 21-20 13 4 7 6 18-4 23-11-5-9-16-5-23-10 8-24 4-20-12v-1c0 11 18 9 19 5 0-4-9-9-26-16v-1c11 3 21 4 32 4 10 0 20-1 31-4Zm61-52 1 1c-6 18-8 29-5 34 6-6 11-14 11-24l19 9c-11 5-20 10-27 17 5 2 15-1 21-4l-32 32c3-6 6-16 4-21-7 6-12 16-16 27l-10-19c11 0 18-5 24-11-5-3-16-2-34 5v-1c10-6 18-12 25-19 8-8 14-15 19-26Zm-186 0c6 10 12 18 20 25 7 8 15 14 25 20h-1c-17-6-29-7-33-4 6 5 13 11 24 11l-10 19c-4-12-10-21-16-28-2 5 1 16 3 21l-31-31c5 2 16 5 21 3-7-6-16-12-28-16l19-10c0 11 6 18 11 24 3-5 2-16-4-33Zm152-5a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm-115 0a15 15 0 0 1 11 25 15 15 0 0 1-25-10 15 15 0 0 1 14-15Zm88-27a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm-63 0a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm133-48c7 17 12 26 16 26s6-19-5-19c18-4 21 11 13 20 7-4 18-6 23 5-5 10-16 8-23 4 8 9 5 24-13 20 11 0 9-19 5-19s-9 9-16 26h-1c3-11 4-21 4-31 0-11-1-21-4-32h1Zm-202 0c-3 11-4 21-4 32 0 10 1 20 4 31h-1c-7-17-12-26-15-26-5 0-7 19 4 19-18 4-21-11-13-20-7 4-18 6-23-4 5-11 16-9 23-5-8-9-5-24 13-20-11 0-9 19-4 19 3 0 8-9 15-26Zm101 11a20 20 0 1 1-1 41 20 20 0 0 1 1-41Zm-32-26a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15Zm63 0a15 15 0 0 1 10 25 15 15 0 0 1-25-10 15 15 0 0 1 15-15ZM92 80a15 15 0 0 1 11 25 15 15 0 0 1-25-11 15 15 0 0 1 14-14Zm115 0a15 15 0 0 1 10 25 15 15 0 0 1-25-11 15 15 0 0 1 15-14ZM80 32l9 19c-10 0-18 5-24 11 5 3 16 1 34-5l1 1c-11 5-18 11-26 19-7 7-13 15-19 25h-1c7-18 8-29 5-34-6 6-11 13-11 24L29 82c11-4 21-9 27-16-5-2-15 1-21 4l32-32c-3 6-6 16-4 21 7-7 12-16 17-27Zm137-1c4 12 10 21 16 28 2-5-1-16-3-21l31 31c-5-2-16-5-21-3 7 6 16 12 28 16l-19 10c0-11-6-18-11-24-3 4-2 16 4 33v1c-6-10-12-18-20-25-7-8-15-14-25-20h1c17 6 28 7 33 4-6-5-13-11-24-11l10-19ZM149 2c10 5 8 16 4 23 9-8 24-5 20 13 0-11-19-9-19-4 0 3 9 8 26 15v1c-11-3-21-4-31-4-11 0-21 1-32 4v-1c17-7 26-12 26-15 0-5-19-7-19 4-4-17 10-21 20-13-4-7-6-18 5-23Z"/>
+</svg>
+          <span class="govuk-header__logotype-text">
+            X-GOVUK
+          </span>
+        </span>
+        <span class="govuk-header__product-name">
+          Eleventy Plugin
+        </span>
+      </a>
+    </div>
+    <div class="app-site-search govuk-!-display-none-print" data-module="app-site-search" data-search-index="/govuk-eleventy-plugin/search.json">
+  <label class="govuk-visually-hidden" for="app-site-search__input">Search site</label>
+  <a class="app-site-search__link govuk-link-no-visited" href="/govuk-eleventy-plugin/sitemap">Sitemap</a>
+</div>
+
+  </div>
+</header>
+
+
+      <div class="govuk-width-container ">
+  <div class="govuk-breadcrumbs govuk-!-display-none-print">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="https://x-govuk.github.io/#shared-projects">X-GOVUK shared projects</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/govuk-eleventy-plugin/">GOV.UK Eleventy Plugin</a>
+    </li>
+  </ol>
+</div>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter-from-desktop">
+      <nav class="x-govuk-side-navigation" aria-labelledby="x-govuk-side-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="x-govuk-side-navigation-heading">Pages in this section</h2>
+    <ul class="x-govuk-side-navigation__section">
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/get-started/">Get started</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/page/">Page</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/options/">Options</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/side-navigation/">Page with side navigation</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/post/">Post</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/layouts/">Histories</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/search/">Adding a site search</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/collection/">Collection</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/markdown/">Markdown</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item">
+          <a class="x-govuk-side-navigation__link" href="/govuk-eleventy-plugin/histories/product/">Product page</a>
+        </li>
+        <li class="x-govuk-side-navigation__section-item x-govuk-side-navigation__section-item--current">
+          <a class="x-govuk-side-navigation__link" href="" aria-current="true">Advanced Markdown</a>
+        </li>
+    </ul>
+</nav>
+
+    </div>
+    <div class="govuk-grid-column-three-quarters-from-desktop">
+      <header class="app-document-header">
+  <h1 class="app-document-header__title govuk-heading-xl">
+    Advanced Markdown
+  </h1>
+    <p class="app-document-header__description govuk-body-l">
+      Additional Markdown syntax is supported to ensure pages can contain additional elements like tables, code blocks and footnotes.
+    </p>
+</header>
+
+
+
+      <div class="app-prose-scope"><p class="govuk-body"><nav class="app-contents-list" aria-label="Contents" role="navigation">
+    <h2 class="app-contents-list__title">Contents</h2>
+<ul><li><a href="#tables">Tables</a><ul><li><a href="#alignment">Alignment</a></li></ul></li><li><a href="#fenced-code">Fenced code</a><ul><li><a href="#syntax-highlighting">Syntax highlighting</a></li></ul></li><li><a href="#footnotes">Footnotes</a></li><li><a href="#abbreviations-and-acronyms">Abbreviations and acronyms</a></li><li><a href="#definition-lists">Definition lists</a></li><li><a href="#task-lists">Task lists</a></li><li><a href="#strike-through">Strike-through</a></li><li><a href="#highlighted-text">Highlighted text</a></li><li><a href="#inserted-text">Inserted text</a></li><li><a href="#subscript">Subscript</a></li><li><a href="#superscript">Superscript</a></li></ul></nav></p>
+<h2 id="tables" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#tables" class="govuk-link"><span>Tables</span></a></h2>
+<p class="govuk-body">To add a table, use 3 or more hyphens (<code class="x-govuk-code x-govuk-code--inline">---</code>) to create each column’s header, and use pipes (<code class="x-govuk-code x-govuk-code--inline">|</code>) to separate each column.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th class="govuk-table__header">Syntax</th>
+<th class="govuk-table__header">Description</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Header</td>
+<td class="govuk-table__cell">Title</td>
+</tr>
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">Paragraph</td>
+<td class="govuk-table__cell">Text</td>
+</tr>
+</tbody>
+</table>
+<p class="govuk-body">Cell widths can vary, as shown below. The rendered output will look the same.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>| Syntax | Description |
+| --- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+</code></pre>
+
+<h3 id="alignment" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#alignment" class="govuk-link"><span>Alignment</span></a></h3>
+<p class="govuk-body">You can align text in the columns to the left, right, or center by adding a colon (<code class="x-govuk-code x-govuk-code--inline">:</code>) to the left, right, or on both side of the hyphens within the header row.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>| Syntax    | Description | Test Text   |
+| :-------- | :---------: | ----------: |
+| Header    | Title       | Here&#x27;s this |
+| Paragraph | Text        | And more    |
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<table tabindex="0" class="govuk-table">
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<th style="text-align:left" class="govuk-table__header">Syntax</th>
+<th style="text-align:center" class="govuk-table__header">Description</th>
+<th style="text-align:right" class="govuk-table__header">Test Text</th>
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell">Header</td>
+<td style="text-align:center" class="govuk-table__cell">Title</td>
+<td style="text-align:right" class="govuk-table__cell">Here’s this</td>
+</tr>
+<tr class="govuk-table__row">
+<td style="text-align:left" class="govuk-table__cell">Paragraph</td>
+<td style="text-align:center" class="govuk-table__cell">Text</td>
+<td style="text-align:right" class="govuk-table__cell">And more</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fenced-code" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#fenced-code" class="govuk-link"><span>Fenced code</span></a></h2>
+<p class="govuk-body">The basic Markdown syntax allows you to create <a href="../markdown#code-blocks" class="govuk-link">code blocks</a> by indenting lines by 4 spaces or one tab. If you find that inconvenient, try using fenced code blocks. You can use 3 backticks (<code class="x-govuk-code x-govuk-code--inline">```</code>) or 3 tildes (<code class="x-govuk-code x-govuk-code--inline">~~~</code>) on the lines before and after the code block.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__code">```
+{
+  &quot;firstName&quot;: &quot;William&quot;,
+  &quot;lastName&quot;: &quot;Pitt&quot;,
+  &quot;age&quot;: 24
+}
+```</span>
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--text" tabindex="0"><code>{
+  &quot;firstName&quot;: &quot;William&quot;,
+  &quot;lastName&quot;: &quot;Pitt&quot;,
+  &quot;age&quot;: 24
+}
+</code></pre>
+
+<h3 id="syntax-highlighting" tabindex="-1" class="govuk-heading-m"><a class="app-heading-anchor" href="#syntax-highlighting" class="govuk-link"><span>Syntax highlighting</span></a></h3>
+<p class="govuk-body">This feature allows you to add color highlighting for whatever language your code was written in. To add syntax highlighting, specify a language next to the backticks before the fenced code block.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__code">```json
+{
+  &quot;firstName&quot;: &quot;William&quot;,
+  &quot;lastName&quot;: &quot;Pitt&quot;,
+  &quot;age&quot;: 24
+}
+```</span>
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--json" tabindex="0"><code><span class="x-govuk-code__punctuation">{</span>
+  <span class="x-govuk-code__attr">&quot;firstName&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;William&quot;</span><span class="x-govuk-code__punctuation">,</span>
+  <span class="x-govuk-code__attr">&quot;lastName&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__string">&quot;Pitt&quot;</span><span class="x-govuk-code__punctuation">,</span>
+  <span class="x-govuk-code__attr">&quot;age&quot;</span><span class="x-govuk-code__punctuation">:</span> <span class="x-govuk-code__number">24</span>
+<span class="x-govuk-code__punctuation">}</span>
+</code></pre>
+
+<h2 id="footnotes" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#footnotes" class="govuk-link"><span>Footnotes</span></a></h2>
+<p class="govuk-body">Footnotes allow you to add notes and references without cluttering the body of the document.</p>
+<p class="govuk-body">When you create a footnote, a superscript number with a link appears where you added the footnote reference. Readers can click the link to jump to the content of the footnote at the bottom of the page.</p>
+<p class="govuk-body">To create a footnote reference, add a caret and an identifier inside brackets (<code class="x-govuk-code x-govuk-code--inline">[^1]</code>).</p>
+<p class="govuk-body">Identifiers can be numbers or words, but they can’t contain spaces or tabs. Identifiers only correlate the footnote reference with the footnote itself — in the output, footnotes are numbered sequentially.</p>
+<p class="govuk-body">Add the footnote using another caret and number inside brackets with a colon and text (<code class="x-govuk-code x-govuk-code--inline">[^1]: My footnote.</code>).</p>
+<p class="govuk-body">You don’t have to put footnotes at the end of the document. You can put them anywhere except inside other elements like lists, block quotes, and tables.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>Here&#x27;s a simple footnote,[^1] and here&#x27;s a longer one.[^bignote]
+
+[<span class="x-govuk-code__symbol">^1</span>]: <span class="x-govuk-code__link">This is the first footnote.</span>
+
+[<span class="x-govuk-code__symbol">^bignote</span>]: <span class="x-govuk-code__link">Here&#x27;s one with multiple paragraphs and code.</span>
+
+<span class="x-govuk-code__code">    Indent paragraphs to include them in the footnote.
+</span>
+<span class="x-govuk-code__code">    `{ my code }`
+</span>
+<span class="x-govuk-code__code">    Add as many paragraphs as you like.
+</span></code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body">Here’s a simple footnote,<sup id="fnref:1"><a class="govuk-link" href="#fn:1" aria-describedby="footnotes-label">1</a></sup> and here’s a longer one.<sup id="fnref:2"><a class="govuk-link" href="#fn:2" aria-describedby="footnotes-label">2</a></sup></p>
+<h2 id="abbreviations-and-acronyms" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#abbreviations-and-acronyms" class="govuk-link"><span>Abbreviations and acronyms</span></a></h2>
+<blockquote class="govuk-inset-text govuk-!-margin-left-0">
+<p class="govuk-body">The <a href="https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style#abbreviations-and-acronyms" class="govuk-link">first time you use an abbreviation or acronym explain it in full</a> on each page unless it’s well known, like UK, DVLA, US, EU, VAT and MP. This includes government departments or schemes. Then refer to it by initials, and use the syntax below so the full explanation is available as hover text.</p>
+</blockquote>
+<p class="govuk-body">To create an abbreviation, add an asterisk followed by brackets around the abbreviation and a colon, followed by the explanation (<code class="x-govuk-code x-govuk-code--inline">*[UC]: Universal Credit</code>).</p>
+<p class="govuk-body">You don’t have to put abbreviations at the end of the document. You can put them anywhere except inside other elements like lists, block quotes, and tables.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>This policy is the responsibility of the DWP.
+
+<span class="x-govuk-code__emphasis">*[DWP]: Department for Work and Pensions
+</span></code></pre>
+
+<p class="govuk-body">This policy is the responsibility of the <abbr title="Department for Work and Pensions">DWP</abbr>.</p>
+<h2 id="definition-lists" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#definition-lists" class="govuk-link"><span>Definition lists</span></a></h2>
+<p class="govuk-body">To create a definition list, type the term on the first line. On the next line, type a colon followed by a space and the definition.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<dl class="app-definition-list">
+<dt>First Term</dt>
+<dd>This is the definition of the first term.</dd>
+<dt>Second Term</dt>
+<dd>This is one definition of the second term.</dd>
+<dd>This is another definition of the second term.</dd>
+</dl>
+<h2 id="task-lists" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#task-lists" class="govuk-link"><span>Task lists</span></a></h2>
+<p class="govuk-body"><mark>Not currently supported</mark></p>
+<p class="govuk-body">Task lists allow you to create a list of items with checkboxes. To create a checkbox, add brackets with a space (<code class="x-govuk-code x-govuk-code--inline">[ ]</code>) at the start of a list item. To show a selected checkbox, add an <code class="x-govuk-code x-govuk-code--inline">x</code> in between the brackets (<code class="x-govuk-code x-govuk-code--inline">[x]</code>).</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code><span class="x-govuk-code__bullet">1.</span> [x] Write the press release
+<span class="x-govuk-code__bullet">2.</span> [ ] Update the website
+<span class="x-govuk-code__bullet">3.</span> [ ] Contact the media
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<ol class="govuk-list govuk-list--number">
+<li>[x] Write the press release</li>
+<li>[ ] Update the website</li>
+<li>[ ] Contact the media</li>
+</ol>
+<h2 id="strike-through" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#strike-through" class="govuk-link"><span>Strike-through</span></a></h2>
+<p class="govuk-body">You can strike-through words by putting a horizontal line through the center of them. The result looks <s>like this</s>. This feature allows you to indicate that certain words are a mistake not meant for inclusion in the document. To strike-through words, use 2 tilde symbols (<code class="x-govuk-code x-govuk-code--inline">~~</code>) before and after the words.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--markdown" tabindex="0"><code>~~The world is flat.~~ We now know that the world is round.
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body"><s>The world is flat.</s> We now know that the world is round.</p>
+<h2 id="highlighted-text" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#highlighted-text" class="govuk-link"><span>Highlighted text</span></a></h2>
+<p class="govuk-body">To highlight words, use 2 equal signs (<code class="x-govuk-code x-govuk-code--inline">==</code>) before and after the words.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--text" tabindex="0"><code>I need to highlight these ==very important words==.
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body">I need to highlight these <mark>very important words</mark>.</p>
+<h2 id="inserted-text" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#inserted-text" class="govuk-link"><span>Inserted text</span></a></h2>
+<p class="govuk-body">To indicate inserted text, use 2 plus signs (<code class="x-govuk-code x-govuk-code--inline">++</code>) before and after the words. You can use this alongside the syntax for <a href="../markdown-advanced#strike-through" class="govuk-link">strike-though</a>.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--text" tabindex="0"><code>I need to ~~remove~~ ++insert++ a word.
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body">I need to <s>remove</s> <ins>insert</ins> a word.</p>
+<h2 id="subscript" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#subscript" class="govuk-link"><span>Subscript</span></a></h2>
+<p class="govuk-body">For subscript text, use one tilde symbol (<code class="x-govuk-code x-govuk-code--inline">~</code>) before and after the characters.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--text" tabindex="0"><code>H~2~O
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body">H<sub>2</sub>O</p>
+<h2 id="superscript" tabindex="-1" class="govuk-heading-l"><a class="app-heading-anchor" href="#superscript" class="govuk-link"><span>Superscript</span></a></h2>
+<p class="govuk-body">For superscript text, use one caret symbol (<code class="x-govuk-code x-govuk-code--inline">^</code>) before and after the characters.</p>
+<pre class="x-govuk-code x-govuk-code--block x-govuk-code__language--text" tabindex="0"><code>X^2^
+</code></pre>
+
+<p class="govuk-body">The rendered output looks like this:</p>
+<p class="govuk-body">X<sup>2</sup></p>
+<footer>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 id="footnotes-label" class="govuk-visually-hidden">Footnotes</h2>
+
+      <ol class="app-footnotes-list">
+<li id="fn:1"><p class="govuk-body">This is the first footnote. <a class="govuk-link" href="#fnref:1" aria-label="Back to content">↩︎</a></p>
+</li>
+<li id="fn:2"><p class="govuk-body">Here’s one with multiple paragraphs and code.</p>
+<p class="govuk-body">Indent paragraphs to include them in the footnote.</p>
+<p class="govuk-body"><code class="x-govuk-code x-govuk-code--inline">{ my code }</code></p>
+<p class="govuk-body">Add as many paragraphs as you like. <a class="govuk-link" href="#fnref:2" aria-label="Back to content">↩︎</a></p>
+</li>
+</ol>
+</footer>
+</div>
+
+
+<div class="x-govuk-related-navigation">
+    <nav class="x-govuk-related-navigation__nav-section" role="navigation" aria-labelledby="related-nav-related-content">
+      <h2 class="x-govuk-related-navigation__main-heading" id="related-nav-related_items-related-content">
+        Related content
+      </h2>
+        <ul class="x-govuk-related-navigation__link-list">
+            <li class="x-govuk-related-navigation__link">
+              <a class="govuk-link x-govuk-related-navigation__section-link x-govuk-related-navigation__section-link--other" href="https://www.markdownguide.org">Markdown Guide</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+    </div>
+  </div>
+        </main>
+      </div>
+
+  <footer class="govuk-footer app-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <h2 class="govuk-visually-hidden">Support links</h2>
+            <ul class="govuk-footer__inline-list">
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://www.11ty.dev" target="_blank">
+                    Documentation for Eleventy (opens in a new tab)
+                  </a>
+                </li>
+            </ul>
+          <span class="govuk-footer__licence-description">
+            Licensed under the <a href="https://github.com/x-govuk/govuk-eleventy-plugin/blob/main/LICENSE.txt" class="govuk-footer__link">MIT Licence</a>, except where otherwise stated
+          </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        © X-GOVUK
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/govuk-eleventy-plugin/assets/govuk.js"></script>
+  <script>document.documentElement.classList.remove('no-js')</script>
+  </body>
+</html>
